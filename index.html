@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+
+<title>Аскар & Ажар | 20.10.2026</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:auto;
+}
+
+body{
+    margin:0;
+    background:#111;
+    color:#111;
+    font-family:Georgia,"Times New Roman",serif;
+    overflow-x:hidden;
+}
+
+.page{
+    width:100%;
+    max-width:720px;
+    margin:auto;
+    background:#f8f7f3;
+    overflow:hidden;
+}
+
+section{
+    position:relative;
+}
+
+.center{
+    text-align:center;
+}
+
+/* =========================
+   OPEN SCREEN
+========================= */
+
+.opening{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.42),
+            rgba(0,0,0,.72)
+        ),
+        url("ресурсы/IMG-20260915-WA0015.jpg")
+        center/cover no-repeat;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.opening.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.opening-content{
+    width:90%;
+    max-width:500px;
+    padding:45px 25px;
+
+    text-align:center;
+    color:white;
+
+    border:1px solid rgba(255,255,255,.55);
+}
+
+.opening-title{
+    font-size:58px;
+    font-style:italic;
+    line-height:1;
+    margin-bottom:15px;
+}
+
+.opening-sub{
+    font-size:11px;
+    letter-spacing:4px;
+    margin-bottom:45px;
+}
+
+.open-btn{
+    width:135px;
+    height:135px;
+
+    border-radius:50%;
+
+    border:1px solid white;
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-family:Georgia,serif;
+    font-size:19px;
+
+    cursor:pointer;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.06);
+    }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    height:100vh;
+    min-height:650px;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(0,0,0,.78)
+        ),
+        url("ресурсы/IMG-20260915-WA0015.jpg")
+        center/cover no-repeat;
+}
+
+.hero-content{
+    width:100%;
+    text-align:center;
+    color:white;
+
+    padding:80px 20px 65px;
+}
+
+.hero-small{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:5px;
+}
+
+.hero-names{
+    margin:18px 0;
+
+    font-size:78px;
+    line-height:.95;
+    font-style:italic;
+    font-weight:normal;
+}
+
+.hero-date{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:4px;
+}
+
+/* =========================
+   COMMON
+========================= */
+
+.section{
+    padding:75px 25px;
+}
+
+.script{
+    font-size:52px;
+    line-height:1.1;
+    font-style:italic;
+}
+
+.line{
+    width:65px;
+    height:1px;
+
+    background:#222;
+
+    margin:25px auto;
+}
+
+.text{
+    font-size:22px;
+    line-height:1.65;
+}
+
+.host-title{
+    margin-top:35px;
+
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    letter-spacing:4px;
+}
+
+.hosts{
+    margin-top:10px;
+    font-size:31px;
+    font-style:italic;
+}
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo{
+    width:100%;
+    height:500px;
+
+    display:block;
+
+    object-fit:cover;
+}
+
+.photo-second{
+    width:100%;
+    height:430px;
+
+    display:block;
+
+    object-fit:cover;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:7px;
+
+    margin-top:35px;
+}
+
+.count{
+    padding:16px 3px;
+
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+}
+
+.number{
+    font-size:40px;
+}
+
+.label{
+    margin-top:7px;
+
+    font-family:Arial,sans-serif;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+/* =========================
+   DATE
+========================= */
+
+.date-card{
+    max-width:500px;
+    margin:30px auto 0;
+
+    padding:35px 20px;
+
+    background:white;
+
+    border:1px solid #d4d1c9;
+}
+
+.date-number{
+    font-size:70px;
+    font-style:italic;
+}
+
+.date-month{
+    margin-top:5px;
+
+    font-family:Arial,sans-serif;
+    letter-spacing:5px;
+    font-size:12px;
+}
+
+.date-time{
+    margin-top:20px;
+    font-size:20px;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+    padding:80px 25px;
+
+    background:#111;
+    color:white;
+
+    text-align:center;
+}
+
+.quote p{
+    max-width:550px;
+    margin:25px auto 0;
+
+    font-size:22px;
+    line-height:1.6;
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.location{
+    background:#111;
+    color:white;
+}
+
+.location .line{
+    background:white;
+}
+
+.location-name{
+    font-size:36px;
+    font-style:italic;
+}
+
+.address{
+    margin-top:20px;
+
+    font-size:18px;
+    line-height:1.8;
+}
+
+.map-btn{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 28px;
+
+    border:1px solid white;
+    border-radius:30px;
+
+    color:white;
+    text-decoration:none;
+
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp{
+    background:#fff;
+}
+
+.input{
+    width:100%;
+
+    padding:16px;
+
+    margin-bottom:12px;
+
+    border:1px solid #d5d2cb;
+    border-radius:10px;
+
+    font-size:15px;
+    font-family:Arial,sans-serif;
+
+    outline:none;
+}
+
+.option{
+    display:block;
+
+    padding:15px;
+
+    margin-bottom:10px;
+
+    border:1px solid #ddd;
+    border-radius:10px;
+
+    background:#faf9f6;
+
+    font-family:Arial,sans-serif;
+    font-size:14px;
+}
+
+.option input{
+    margin-right:8px;
+}
+
+.send-btn{
+    width:100%;
+
+    padding:17px;
+
+    border:0;
+    border-radius:30px;
+
+    background:#111;
+    color:white;
+
+    font-size:11px;
+    letter-spacing:2px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   WISHES
+========================= */
+
+.wish-box{
+    display:flex;
+    gap:8px;
+
+    margin-top:25px;
+}
+
+.wish-box .input{
+    margin:0;
+}
+
+.wish-add{
+    width:58px;
+
+    border:0;
+    border-radius:10px;
+
+    background:#111;
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+.wish{
+    padding:15px;
+
+    margin-top:10px;
+
+    background:white;
+
+    border:1px solid #ddd;
+    border-radius:10px;
+
+    font-size:18px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    padding:90px 25px 130px;
+
+    background:#111;
+    color:white;
+
+    text-align:center;
+}
+
+.footer-name{
+    font-size:65px;
+    font-style:italic;
+}
+
+.footer-text{
+    margin-top:25px;
+
+    font-size:20px;
+    line-height:1.6;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-btn{
+    position:fixed;
+
+    right:18px;
+    bottom:18px;
+
+    z-index:500;
+
+    width:55px;
+    height:55px;
+
+    border:0;
+    border-radius:50%;
+
+    background:#111;
+    color:white;
+
+    font-size:21px;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.3);
+
+    cursor:pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+    .opening-title{
+        font-size:48px;
+    }
+
+    .hero-names{
+        font-size:58px;
+    }
+
+    .script{
+        font-size:43px;
+    }
+
+    .text{
+        font-size:20px;
+    }
+
+    .photo{
+        height:440px;
+    }
+
+    .photo-second{
+        height:350px;
+    }
+
+    .number{
+        font-size:32px;
+    }
+
+    .footer-name{
+        font-size:52px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     OPENING
+========================= -->
+
+<div class="opening" id="opening">
+
+    <div class="opening-content">
+
+        <div class="opening-title">
+            Аскар & Ажар
+        </div>
+
+        <div class="opening-sub">
+            ҮЙЛӨНҮҮ ТОЮНА ЧАКЫРУУ
+        </div>
+
+        <button
+            class="open-btn"
+            id="openBtn"
+        >
+            АЧУУ
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     PAGE
+========================= -->
+
+<main class="page">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            WEDDING DAY
+        </div>
+
+        <div class="hero-names">
+            Аскар & Ажар
+        </div>
+
+        <div class="hero-date">
+            20 • 10 • 2026
+            &nbsp; | &nbsp;
+            15:00
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INVITATION -->
+
+<section class="section center">
+
+    <div class="script">
+        Биздин кубанычтуу күн
+    </div>
+
+    <div class="line"></div>
+
+    <div class="text">
+
+        Урматтуу туугандар,
+        достор жана жакындарыбыз!
+
+        <br><br>
+
+        Сиздерди биздин кубанычтуу
+        күнүбүзгө чакырабыз.
+
+        <br><br>
+
+        Бул өзгөчө күндү сиздер менен
+        бирге өткөрүп,
+        кубанычыбызга күбө болушуңуздарды
+        каалайбыз.
+
+    </div>
+
+    <div class="host-title">
+        ТОЙ ЭЭЛЕРИ ЧАКЫРАТ
+    </div>
+
+    <div class="hosts">
+        Кылыч & Жылдыз
+    </div>
+
+</section>
+
+
+<!-- PHOTO 2 -->
+
+<img
+    class="photo"
+    src="ресурсы/IMG-20260915-WA0016.jpg"
+    alt="Аскар жана Ажар"
+>
+
+
+<!-- DATE -->
+
+<section class="section center">
+
+    <div class="script">
+        Save the Date
+    </div>
+
+    <div class="line"></div>
+
+    <div class="date-card">
+
+        <div class="date-number">
+            20
+        </div>
+
+        <div class="date-month">
+            ОКТЯБРЬ 2026
+        </div>
+
+        <div class="date-time">
+            Саат 15:00
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+
+<section class="section center">
+
+    <div class="script">
+        Тойго чейин
+    </div>
+
+    <div class="line"></div>
+
+    <div class="countdown">
+
+        <div class="count">
+            <div class="number" id="days">
+                00
+            </div>
+            <div class="label">
+                КҮН
+            </div>
+        </div>
+
+        <div class="count">
+            <div class="number" id="hours">
+                00
+            </div>
+            <div class="label">
+                СААТ
+            </div>
+        </div>
+
+        <div class="count">
+            <div class="number" id="minutes">
+                00
+            </div>
+            <div class="label">
+                МҮНӨТ
+            </div>
+        </div>
+
+        <div class="count">
+            <div class="number" id="seconds">
+                00
+            </div>
+            <div class="label">
+                СЕКУНД
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTO 3 -->
+
+<img
+    class="photo-second"
+    src="ресурсы/IMG-20260915-WA0019.jpg"
+    alt="Wedding photo"
+>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <div class="script">
+        Сиздерди күтөбүз!
+    </div>
+
+    <p>
+        Биз үчүн бул күндүн мааниси
+        сиздердин катышууңуздар менен
+        дагы да өзгөчө болот.
+    </p>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="section location center">
+
+    <div class="script">
+        Тойдун дареги
+    </div>
+
+    <div class="line"></div>
+
+    <div class="location-name">
+        President sity hall
+    </div>
+
+    <div class="address">
+
+        20-октябрь 2026-жыл
+        <br>
+
+        Саат 15:00
+
+        <br><br>
+
+        Ауэзова көчөсү, 24/3
+        <br>
+
+        Бишкек шаары
+
+    </div>
+
+    <a
+        class="map-btn"
+        href="https://2gis.kg/bishkek/geo/70000001033577160"
+        target="_blank"
+        rel="noopener"
+    >
+        КАРТАДАН КӨРҮҮ
+    </a>
+
+</section>
+
+
+<!-- PHOTO 4 -->
+
+<img
+    class="photo"
+    src="ресурсы/IMG-20260915-WA0026.jpg"
+    alt="Аскар & Ажар"
+>
+
+
+<!-- RSVP -->
+
+<section class="section rsvp">
+
+    <div class="script center">
+        Сиз келесизби?
+    </div>
+
+    <div class="line"></div>
+
+    <p class="center text">
+        Катышууңуз тууралуу алдын ала
+        билдирип коюңуз.
+    </p>
+
+    <input
+        class="input"
+        id="guestName"
+        type="text"
+        placeholder="Атыңыз-жөнүңүз"
+    >
+
+    <label class="option">
+        <input
+            type="radio"
+            name="answer"
+            value="Ооба, барам!"
+            checked
+        >
+        Ооба, барам!
+    </label>
+
+    <label class="option">
+        <input
+            type="radio"
+            name="answer"
+            value="Жубайым менен барам"
+        >
+        Жубайым менен барам
+    </label>
+
+    <label class="option">
+        <input
+            type="radio"
+            name="answer"
+            value="Өкүнүчтүүсү, келе албайм"
+        >
+        Өкүнүчтүүсү, келе албайм
+    </label>
+
+    <button
+        class="send-btn"
+        id="sendBtn"
+    >
+        ЖООП БЕРҮҮ
+    </button>
+
+</section>
+
+
+<!-- WISHES -->
+
+<section class="section center">
+
+    <div class="script">
+        Каалоо-тилек
+    </div>
+
+    <div class="line"></div>
+
+    <div class="text">
+        Аскар & Ажарга
+        жакшы каалоо-тилегиңизди
+        калтырыңыз.
+    </div>
+
+    <div class="wish-box">
+
+        <input
+            class="input"
+            id="wishInput"
+            type="text"
+            placeholder="Каалоо-тилегиңиз..."
+        >
+
+        <button
+            class="wish-add"
+            id="wishAdd"
+        >
+            +
+        </button>
+
+    </div>
+
+    <div id="wishList"></div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-name">
+        Аскар & Ажар
+    </div>
+
+    <div class="footer-text">
+
+        Сиздер менен бирге
+        бул өзгөчө күндү
+        бөлүшүүгө кубанычтабыз.
+
+        <br><br>
+
+        Кылыч & Жылдыз
+
+    </div>
+
+</footer>
+
+</main>
+
+
+<!-- MUSIC -->
+
+<button
+    class="music-btn"
+    id="musicBtn"
+>
+    ♪
+</button>
+
+<audio
+    id="music"
+    loop
+    preload="auto"
+>
+    <source
+        src="ресурсы/jax-0214-zgch-kn.mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
+
+<script>
+
+/* =====================================
+   OPEN INVITATION
+===================================== */
+
+const opening =
+    document.getElementById("opening");
+
+const openBtn =
+    document.getElementById("openBtn");
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+let autoScrolling = false;
+let animationFrame = null;
+
+openBtn.addEventListener("click", function(){
+
+    opening.classList.add("hide");
+
+    music.play().catch(function(){});
+
+    musicBtn.innerHTML = "❚❚";
+
+    setTimeout(function(){
+
+        startAutoScroll();
+
+    }, 1200);
+
+});
+
+
+/* =====================================
+   AUTOMATIC SCROLL
+===================================== */
+
+function startAutoScroll(){
+
+    if(autoScrolling){
+        return;
+    }
+
+    autoScrolling = true;
+
+    const speed = 0.7;
+
+    function scroll(){
+
+        const current =
+            window.scrollY;
+
+        const max =
+            document.documentElement.scrollHeight
+            -
+            window.innerHeight;
+
+        if(current >= max){
+
+            autoScrolling = false;
+
+            return;
+        }
+
+        window.scrollTo(
+            0,
+            current + speed
+        );
+
+        animationFrame =
+            requestAnimationFrame(scroll);
+    }
+
+    animationFrame =
+        requestAnimationFrame(scroll);
+}
+
+
+/* =====================================
+   MUSIC
+===================================== */
+
+musicBtn.addEventListener(
+    "click",
+    function(){
+
+        if(music.paused){
+
+            music.play();
+
+            musicBtn.innerHTML =
+                "❚❚";
+
+        }else{
+
+            music.pause();
+
+            musicBtn.innerHTML =
+                "♪";
+        }
+
+    }
+);
+
+
+/* =====================================
+   COUNTDOWN
+===================================== */
+
+function updateCountdown(){
+
+    const target =
+        new Date(
+            "2026-10-20T15:00:00+06:00"
+        ).getTime();
+
+    const now =
+        new Date().getTime();
+
+    let difference =
+        target - now;
+
+    if(difference < 0){
+
+        difference = 0;
+
+    }
+
+    const day =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+    const hour =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
+
+    const minute =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
+
+    const second =
+        Math.floor(
+            (difference %
+            (1000 * 60))
+            /
+            1000
+        );
+
+    document.getElementById("days")
+        .textContent =
+        String(day).padStart(2,"0");
+
+    document.getElementById("hours")
+        .textContent =
+        String(hour).padStart(2,"0");
+
+    document.getElementById("minutes")
+        .textContent =
+        String(minute).padStart(2,"0");
+
+    document.getElementById("seconds")
+        .textContent =
+        String(second).padStart(2,"0");
+}
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =====================================
+   RSVP
+===================================== */
+
+document.getElementById("sendBtn")
+.addEventListener(
+    "click",
+    function(){
+
+        const name =
+            document
+            .getElementById("guestName")
+            .value
+            .trim();
+
+        const answer =
+            document
+            .querySelector(
+                'input[name="answer"]:checked'
+            )
+            .value;
+
+        if(!name){
+
+            alert(
+                "Сураныч, атыңызды жазыңыз."
+            );
+
+            return;
+        }
+
+        /*
+          Бул жерге кийин
+          Кылыч же Жылдыздын
+          WhatsApp номерин жазабыз.
+        */
+
+        const phone =
+            "996700000000";
+
+        const message =
+            "Аскар & Ажардын тоюна жооп:%0A%0A"
+            +
+            "Аты-жөнү: "
+            +
+            encodeURIComponent(name)
+            +
+            "%0A"
+            +
+            "Жооп: "
+            +
+            encodeURIComponent(answer);
+
+        window.open(
+            "https://wa.me/"
+            +
+            phone
+            +
+            "?text="
+            +
+            message,
+            "_blank"
+        );
+
+    }
+);
+
+
+/* =====================================
+   WISHES
+===================================== */
+
+const wishInput =
+    document.getElementById(
+        "wishInput"
+    );
+
+const wishAdd =
+    document.getElementById(
+        "wishAdd"
+    );
+
+const wishList =
+    document.getElementById(
+        "wishList"
+    );
+
+wishAdd.addEventListener(
+    "click",
+    function(){
+
+        const text =
+            wishInput.value.trim();
+
+        if(!text){
+            return;
+        }
+
+        const wish =
+            document.createElement(
+                "div"
+            );
+
+        wish.className =
+            "wish";
+
+        wish.textContent =
+            text;
+
+        wishList.prepend(wish);
+
+        wishInput.value = "";
+
+    }
+);
+
+wishInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            wishAdd.click();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+          </html>
